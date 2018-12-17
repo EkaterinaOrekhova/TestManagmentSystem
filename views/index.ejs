@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <!-- BEGIN HEAD -->
+    <head>
+        <meta charset="utf-8"/>
+        <title>Metronic "Aitonepage" Frontend Freebie</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+
+        <!-- GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- PAGE LEVEL PLUGIN STYLES -->
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- THEME STYLES -->
+        <link href="css/layout.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="favicon.ico"/>
+    </head>
+    <!-- END HEAD -->
+    <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+        <!-- CORE PLUGINS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="vendor/jquery.min.js" type="text/javascript"></script> 
+        <script src="vendor/jquery-migrate.min.js" type="text/javascript"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL PLUGINS -->
+        <script src="vendor/jquery.easing.js" type="text/javascript"></script>
+        <script src="vendor/jquery.back-to-top.js" type="text/javascript"></script>
+        <script src="vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
+        <script src="vendor/jquery.wow.min.js" type="text/javascript"></script>
+        <script src="vendor/swiper/js/swiper.jquery.min.js" type="text/javascript"></script>
+        <script src="vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
+        <script src="vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+
+        <!-- PAGE LEVEL SCRIPTS -->
+        <script src="js/layout.min.js" type="text/javascript"></script>
+        <script src="js/components/wow.min.js" type="text/javascript"></script>
+        <script src="js/components/swiper.min.js" type="text/javascript"></script>
+        <script src="js/components/masonry.min.js" type="text/javascript"></script>
+
+        <!-- Форма регистрации -->
+        <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
+        <link rel="stylesheet" href="http://bootstraptema.ru/plugins/font-awesome/4-4-0/font-awesome.min.css" />
+        <script src="http://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="http://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>
+        <script src="http://bootstraptema.ru/_sf/3/394.js" type="text/javascript"></script>
+
+        <script>
+            $(document).ready(function(){
+            openLoginModal();
+
+            $(document).on("click","#testbutton",function(e) {
+                e.preventDefault();
+    $('p.error').remove();
+    $('input').removeClass('error');
+
+    var data = {
+      login: $('#login-email').val(),
+      password: $('#login-password').val()
+    };
+    if (data.login == "test" && data.password == "test") {
+        $(location).attr('href', '/creaper');
+      } 
+      else {
+          alert('Неправильный логин или пароль!')
+      }
+
+    $.ajax({
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json',
+      url: '/auth/login'
+    }).done(function(data) {
+      if (data.login == "test") {
+
+      } else {
+
+      }
+    });
+ }); 
+});
+        </script>
+        
+    <!-- BODY -->
+    <body id="body" data-spy="scroll" data-target=".header">
+
+        <% include layout/header.ejs %>
+
+        <!--========== SLIDER ==========-->
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div class="container">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                </ol>
+            </div>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img class="img-responsive" src="img/1920x1080/01.jpg" alt="Slider Image">
+                    <div class="container">
+                        <div class="carousel-centered">
+                            <div class="margin-b-40">
+                                <h1 class="carousel-title">Catherine - система управления тестированием</h1>
+                                <p class="color-white">Управлять процессом тестирования еще никогда не было так просто</p>
+                            </div>
+                            <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Присоединиться</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="img-responsive" src="img/1920x1080/02.jpg" alt="Slider Image">
+                    <div class="container">
+                        <div class="carousel-centered">
+                            <div class="margin-b-40">
+                                <h2 class="carousel-title">Попробуйте Catherine </br> уже сейчас</h2>
+                            </div>
+                            <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Присоединиться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--========== SLIDER ==========-->
+
+        <!--========== PAGE LAYOUT ==========-->
+        <!-- About -->
+        <div id="about">
+            <div class="content-lg container">
+                <!-- Masonry Grid -->
+                <div class="masonry-grid row">
+                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 sm-margin-b-30">
+                        <div class="margin-b-60">
+                            <h2>Почему стоит выбрать нас?</h2>
+                            <p>Catherine - новейшая система управления тестированием. Попробуйте систему уже сегодня - и вы удивитесь, насколько велики ее возможности.</p>
+                        </div>
+                        <img class="full-width img-responsive wow fadeInUp" src="img/500x500/01.jpg" alt="Portfolio Image" data-wow-duration=".3" data-wow-delay=".2s">
+                    </div>
+                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="margin-b-60">
+                            <img class="full-width img-responsive wow fadeInUp" src="img/500x500/02.jpg" alt="Portfolio Image" data-wow-duration=".3" data-wow-delay=".3s">
+                        </div>
+                        <h2>Удобный и простой интерфейс</h2>
+                        <p>Управлять процессом тестирования никогда не было так просто. Минималистичный и современный интерфейс - то, что так привлекает в Catherine.</p>
+                    </div>
+                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                        <div class="margin-t-60 margin-b-60">
+                            <h2>Постоянные улучшения</h2>
+                            <p>Catherine - одна из новейших разработок в мире тестирования. Мы не стоим на месте и постоянно развиваем нашу систему.</p>
+                        </div>
+                        <img class="full-width img-responsive wow fadeInUp" src="img/500x500/03.jpg" alt="Portfolio Image" data-wow-duration=".3" data-wow-delay=".4s">
+                    </div>
+                </div>
+                <!-- End Masonry Grid -->
+            </div>
+        </div>
+        <!-- End About -->
+
+        <!-- Команда проекта -->
+        <div id="products">
+            <div class="content-lg container">
+                <div class="row margin-b-40">
+                    <div class="col-sm-6">
+                        <h2>Команда проекта</h2>
+                    </div>
+                </div>
+                <!--// end row -->
+
+                <div class="row">
+                    <!-- Latest Products -->
+                    <div class="col-sm-4 sm-margin-b-50">
+                        <div class="margin-b-20">
+                            <img class="img-responsive" src="img/970x647/01.jpg" alt="Latest Products Image">
+                        </div>
+                        <h4><a href="#">Орехова Екатерина</a> <span class="text-uppercase margin-l-20">Разработчик</span></h4>
+                        <p>Создатель и главный разработчик системы Catherine. На данный момент является студенткой ИГЭУ.</p>
+                        <a class="link" href="#">Читать далее</a>
+                    </div>
+                    <!-- End Latest Products -->
+
+                    <!-- Latest Products -->
+                    <div class="col-sm-4 sm-margin-b-50">
+                        <div class="margin-b-20">
+                            <img class="img-responsive" src="img/970x647/03.jpg" alt="Latest Products Image">
+                        </div>
+                        <h4><a href="#">Петров Никита</a> <span class="text-uppercase margin-l-20"></span></h4>
+                        <p>Идейный вдохновитель. На данный момент является начальном отдела тестирования ООО "Восточный Экспресс"</p>
+                        <a class="link" href="#">Читать далее</a>
+                    </div>
+                    <!-- End Latest Products -->
+                </div>
+                <!--// end row -->
+            </div>
+        </div>
+        <!-- Команда проекта -->
+            
+        <!-- Контакты -->
+        <div id="contact">
+            <!-- Contact List -->
+            <div class="section-seperator">
+                <div class="content-lg container">
+                    <div class="row">
+                        <!-- Contact List -->
+                        <div class="col-sm-4 sm-margin-b-50">
+                            <h3><a href="#">Иваново</a> <span class="text-uppercase margin-l-20">Главный офис</span></h3>
+                            <p>Главный офис компании находится по адресу: Россия, Иваново, ул. Парижской Коммуны, д. 56А, к. 81. </br> Время работы: пн-птн 9.00 - 18.00</p>
+                            <ul class="list-unstyled contact-list">
+                                <li><i class="margin-r-10 color-base icon-call-out"></i> 8 929 087 98 78</li>
+                                <li><i class="margin-r-10 color-base icon-envelope"></i> orehova@oe-it.ru</li>
+                            </ul>
+                        </div>
+                        <!-- End Contact List -->
+
+                    </div>
+                    <!--// end row -->
+                </div>
+            </div>
+            <!-- End Contact List -->
+                   
+        </div>
+        <!-- Конец Контакты -->
+        <!--========== END PAGE LAYOUT ==========-->
+        <!-- Наверх -->
+        <% include layout/footer.ejs %>
+
+        <!-- Наверх -->
+
+        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Наверх</a>
+
+        
+
+    </body>
+    <!-- END BODY -->
+    
+ <% include layout/sidebar.ejs %> 
+ 
+</html>
